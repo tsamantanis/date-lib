@@ -14,5 +14,11 @@ inside your project directory.
 
 ```
 const betterDate = new BetterDate()
-console.log(betterDate.year) // prints the full year on console
 ```
+
+| ### function 	| ### sample output 	|
+|:------------:	|:-----------------:	|
+|     .year    	|        2021       	|
+|      .yr     	|         21        	|
+|    .month    	|     September     	|
+|     .mon     	|        Sep        	|
