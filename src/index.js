@@ -1,11 +1,19 @@
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const monthsShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-const daysShort = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
 function withZero(number) {
     return number < 10 ? `0${number}` : number.toString()
 }
+
+function ordinalPrefix(date) {
+    date = date.toString()
+    if (date.charAt(date.length - 1) === '1') return date + 'st'
+    else if (date.charAt(date.length - 1) === '2') return date + 'nd'
+    else if (date.charAt(date.length - 1) === '3') return date + 'rd'
+    else return date + 'th'
+}
+
 class BetterDate {
     constructor(...args) {
         this.date = new Date(...args)
@@ -29,6 +37,14 @@ class BetterDate {
 
     get day() {
         return this.date.getDate()
+    }
+
+    get dayName() {
+        return days[this.day % 7]
+    }
+
+    get dayShortName() {
+        return days[this.day % 7].substring(0, 3)
     }
 
     get hours() {
@@ -65,6 +81,18 @@ class BetterDate {
                     break
                 case 'd':
                     dateStr += this.day
+                    break
+                case 'E':
+                    dateStr += this.dayName
+                    break
+                case 'e':
+                    dateStr += this.dayShortName
+                    break
+                case 'F':
+                    dateStr += ordinalPrefix(withZero(this.day))
+                    break
+                case 'f':
+                    dateStr += ordinalPrefix(this.day)
                     break
                 case 'H':
                     dateStr += withZero(this.hours)

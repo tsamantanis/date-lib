@@ -46,6 +46,9 @@ test('betterDate.secs', function() {
 test('betterDate.format', function () {
     expect(someBirthday.format()).toBe('1965 September 26')
     expect(exampleDate.format()).toBe('2017 January 02')
+    expect(exampleDate.format('E M d, Y')).toBe('Wednesday January 2, 2017')
+    expect(exampleDate.format('E M f, Y')).toBe('Wednesday January 2nd, 2017')
+    expect(someBirthday.format('E M f, Y')).toBe('Saturday September 26th, 1965')
     expect(exampleDate.format('y/m/d')).toBe('17/Jan/2')
     expect(exampleDate.format('H:I:S')).toBe('03:04:05')
     expect(exampleDate.format('h:i:s')).toBe('3:4:5')
