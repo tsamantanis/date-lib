@@ -13,3 +13,11 @@ test('betterDate.yr', function() {
     expect(betterDate.yr).toBe(today.getFullYear() % 100)
     expect(someBirthday.yr).toBe(65)
 })
+
+test('betterDate.month', function() {
+    expect(someBirthday.month).toBe('September')
+})
+
+test('betterDate.mon', function() {
+    expect(someBirthday.mon).toBe('Sep')
+})
