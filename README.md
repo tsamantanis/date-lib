@@ -22,3 +22,7 @@ const betterDate = new BetterDate()
 |      .yr     	|         21        	|
 |    .month    	|     September     	|
 |     .mon     	|        Sep        	|
+|     .day     	|         26        	|
+|    .hours    	|         18        	|
+|     .mins    	|         54        	|
+|     .secs    	|         32        	|
