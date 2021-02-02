@@ -11,3 +11,8 @@ To install this library, run
 inside your project directory.
 
 ## Usage
+
+```
+const betterDate = new BetterDate()
+console.log(betterDate.year) // prints the full year on console
+```
