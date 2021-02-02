@@ -21,3 +21,23 @@ test('betterDate.month', function() {
 test('betterDate.mon', function() {
     expect(someBirthday.mon).toBe('Sep')
 })
+
+test('betterDate.day', function() {
+    expect(betterDate.day).toBe(today.getDay())
+    expect(someBirthday.day).toBe(26)
+})
+
+test('betterDate.hours', function() {
+    expect(betterDate.hours).toBe(today.getHours())
+    expect(someBirthday.hours).toBe(0)
+})
+
+test('betterDate.mins', function() {
+    expect(betterDate.mins).toBe(today.getMinutes())
+    expect(someBirthday.mins).toBe(0)
+})
+
+test('betterDate.secs', function() {
+    expect(betterDate.secs).toBe(today.getSeconds())
+    expect(someBirthday.secs).toBe(0)
+})
