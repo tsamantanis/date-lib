@@ -16,13 +16,13 @@ inside your project directory.
 const betterDate = new BetterDate()
 ```
 
-| ### function 	| ### sample output 	|
-|:------------:	|:-----------------:	|
-|     .year    	|        2021       	|
-|      .yr     	|         21        	|
-|    .month    	|     September     	|
-|     .mon     	|        Sep        	|
-|     .day     	|         26        	|
-|    .hours    	|         18        	|
-|     .mins    	|         54        	|
-|     .secs    	|         32        	|
+| ### function 	    | ### sample output 	|
+|:------------:	    |:-----------------:	|
+|     `.year`    	|        2021       	|
+|      `.yr`     	|         21        	|
+|    `.month`    	|     September     	|
+|     `.mon`     	|        Sep        	|
+|     `.day`     	|         26        	|
+|    `.hours`    	|         18        	|
+|     `.mins`    	|         54        	|
+|     `.secs`    	|         32        	|

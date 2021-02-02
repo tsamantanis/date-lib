@@ -3,6 +3,9 @@ const monthsShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Se
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 const daysShort = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
+function withZero(number) {
+    return number < 10 ? `0${number}` : number.toString()
+}
 class BetterDate {
     constructor(...args) {
         this.date = new Date(...args)
@@ -38,6 +41,54 @@ class BetterDate {
 
     get secs() {
         return this.date.getSeconds()
+    }
+
+    format(mask = 'Y M D') {
+        const maskArray = mask.split('')
+        let dateStr = ''
+        maskArray.forEach((char) => {
+            switch (char) {
+                case 'Y':
+                    dateStr += this.year
+                    break
+                case 'y':
+                    dateStr += this.yr
+                    break
+                case 'M':
+                    dateStr += this.month
+                    break
+                case 'm':
+                    dateStr += this.mon
+                    break
+                case 'D':
+                    dateStr += withZero(this.day)
+                    break
+                case 'd':
+                    dateStr += this.day
+                    break
+                case 'H':
+                    dateStr += withZero(this.hours)
+                    break
+                case 'h':
+                    dateStr += this.hours
+                    break
+                case 'I':
+                    dateStr += withZero(this.mins)
+                    break
+                case 'i':
+                    dateStr += this.mins
+                    break
+                case 'S':
+                    dateStr += withZero(this.secs)
+                    break
+                case 's':
+                    dateStr += this.secs
+                    break
+                default:
+                    dateStr += char
+            }
+        });
+        return dateStr
     }
 }
 

@@ -3,6 +3,7 @@ const  BetterDate = require('../src/')
 const today = new Date()
 const betterDate = new BetterDate()
 const someBirthday = new BetterDate(1965, 8, 26)
+const exampleDate = new BetterDate(2017, 0, 2, 3, 4, 5)
 
 test('betterDate.year', function() {
     expect(betterDate.year).toBe(today.getFullYear())
@@ -40,4 +41,13 @@ test('betterDate.mins', function() {
 test('betterDate.secs', function() {
     expect(betterDate.secs).toBe(today.getSeconds())
     expect(someBirthday.secs).toBe(0)
+})
+
+test('betterDate.format', function () {
+    expect(someBirthday.format()).toBe('1965 September 26')
+    expect(exampleDate.format()).toBe('2017 January 02')
+    expect(exampleDate.format('y/m/d')).toBe('17/Jan/2')
+    expect(exampleDate.format('H:I:S')).toBe('03:04:05')
+    expect(exampleDate.format('h:i:s')).toBe('3:4:5')
+    expect(exampleDate.format('Y-M-D h:I:S')).toBe('2017-January-02 3:04:05')
 })
