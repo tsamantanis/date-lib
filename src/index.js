@@ -1,13 +1,15 @@
 class BetterDate {
-    contructor(...args) {
+    constructor(...args) {
         this.date = new Date(...args)
     }
 
-    year() {
+    get year() {
         return this.date.getFullYear()
     }
 
-    yr() {
+    get yr() {
         return this.date.getFullYear() % 100
     }
 }
+
+module.exports = BetterDate
