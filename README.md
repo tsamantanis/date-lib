@@ -16,7 +16,7 @@ inside your project directory.
 const betterDate = new BetterDate()
 ```
 
-| ### function 	    | ### sample output 	|
+|    function 	    |    sample output 	    |
 |:------------:	    |:-----------------:	|
 |     `.year`    	|        2021       	|
 |      `.yr`     	|         21        	|
@@ -30,7 +30,7 @@ const betterDate = new BetterDate()
 
 ### format()
 
-| ### input 	| ### example 	|              ### description              	|
+|    input 	    |    example 	|                description                	|
 |:---------:	|:-----------:	|:-----------------------------------------:	|
 |     `Y`     	|     2021    	|           year in 4 digit format          	|
 |     `y`     	|      21     	|           year in 2 digit format          	|
