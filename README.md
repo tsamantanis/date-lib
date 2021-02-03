@@ -2,6 +2,9 @@
 
 The goal of this package is to handle date operations in a better and more intuitive way than the built in Date Object
 
+![npm bundle size](https://img.shields.io/bundlephobia/min/@tsamantanis/date-lib?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/tsamantanis/date-lib?style=for-the-badge)
+
 ## Installation
 
 To install this library, run
