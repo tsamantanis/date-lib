@@ -4,6 +4,7 @@ const today = new Date()
 const betterDate = new BetterDate()
 const someBirthday = new BetterDate(1965, 8, 26)
 const exampleDate = new BetterDate(2017, 0, 2, 3, 4, 5)
+const exampleOtherDate = new BetterDate(2021, 6, 2, 3, 4, 5)
 
 test('betterDate.year', function() {
     expect(betterDate.year).toBe(today.getFullYear())
@@ -43,7 +44,7 @@ test('betterDate.secs', function() {
     expect(someBirthday.secs).toBe(0)
 })
 
-test('betterDate.format', function () {
+test('betterDate.format', function() {
     expect(someBirthday.format()).toBe('1965 September 26')
     expect(exampleDate.format()).toBe('2017 January 02')
     expect(exampleDate.format('E M d, Y')).toBe('Wednesday January 2, 2017')
@@ -53,4 +54,17 @@ test('betterDate.format', function () {
     expect(exampleDate.format('H:I:S')).toBe('03:04:05')
     expect(exampleDate.format('h:i:s')).toBe('3:4:5')
     expect(exampleDate.format('Y-M-D h:I:S')).toBe('2017-January-02 3:04:05')
+})
+
+test('betterDate.when', function() {
+    expect(exampleDate.when()).toBe('4 years ago')
+    expect(someBirthday.when()).toBe('56 years ago')
+    expect(betterDate.when()).toBe('now')
+    expect(exampleOtherDate.when()).toBe('5 months from now')
+    const dateHoursDiff = new BetterDate(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours() - 5, 0, 0)
+    expect(dateHoursDiff.when()).toBe('5 hours ago')
+    const dateMinutesDiff = new BetterDate(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes() + 24, 0)
+    expect(dateMinutesDiff.when()).toBe('24 minutes from now')
+    const dateSecondsDiff = new BetterDate(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(), today.getSeconds() + 1)
+    expect(dateSecondsDiff.when()).toBe('1 second from now')
 })

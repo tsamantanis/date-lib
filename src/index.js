@@ -109,6 +109,43 @@ class BetterDate {
         });
         return dateStr
     }
+    when() {
+        const now = new BetterDate()
+        const diffYear = this.year - now.year
+        const diffMonth = this.date.getMonth() - now.date.getMonth() + diffYear * 12
+        const diffDay = this.day - now.day
+        const diffHours = this.hours - now.hours + diffDay * 24
+        const diffMinutes = this.mins - now.mins + diffHours * 60
+        const diffSeconds = this.secs - now.secs + diffMinutes * 60
+
+        if (diffMonth > 11) {
+            return `${ diffYear } year${ diffYear > 1 ? 's' : '' } from now`
+        } else if (diffMonth < -11) {
+            return `${ Math.abs(diffYear) } year${ diffYear < -1 ? 's' : '' } ago`
+        } else if (diffMonth > 0) {
+            return `${ diffMonth } month${ diffMonth > 1 ? 's' : '' } from now`
+        } else if (diffMonth < 0) {
+            return `${ Math.abs(diffMonth)} month${ diffMonth < -1 ? 's' : '' } ago`
+        } else if (diffHours > 23) {
+            return `${ diffDay } day${ diffDay > 1 ? 's' : '' } from now`
+        } else if (diffHours < -23) {
+            return `${ diffDay } day${ diffDay < -1 ? 's' : '' } ago`
+        } else if (diffMinutes > 59) {
+            return `${ Math.abs(diffHours) } hour${ diffHours > 1 ? 's' : '' } from now`
+        } else if (diffMinutes < -59) {
+            return `${ Math.abs(diffHours) } hour${ diffHours < -1 ? 's' : '' } ago`
+        }  else if (diffSeconds > 59) {
+            return `${ Math.abs(diffMinutes) } minute${ diffMinutes > 1 ? 's' : '' } from now`
+        } else if (diffSeconds < -59) {
+            return `${ Math.abs(diffMinutes) } minute${ diffMinutes < -1 ? 's' : '' } ago`
+        }  else if (diffSeconds > 0) {
+            return `${ Math.abs(diffSeconds) } second${ diffSeconds > 1 ? 's' : '' } from now`
+        } else if (diffSeconds < 0) {
+            return `${ Math.abs(diffSeconds) } second${ diffSeconds < -1 ? 's' : '' } ago`
+        } else {
+            return 'now'
+        }
+    }
 }
 
 module.exports = BetterDate
