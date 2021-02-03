@@ -26,6 +26,7 @@ const betterDate = new BetterDate()
 |    `.hours`    	|         18        	|
 |     `.mins`    	|         54        	|
 |     `.secs`    	|         32        	|
+|     `.when()`     |   23 minutes ago      |
 
 ### format()
 
