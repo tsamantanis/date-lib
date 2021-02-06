@@ -16,6 +16,8 @@ inside your project directory.
 ## Usage
 
 ```
+const BetterDate = require('@tsamantanis/date-lib')
+
 const betterDate = new BetterDate()
 ```
 

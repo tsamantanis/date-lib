@@ -1,6 +1,6 @@
 {
     "name": "@tsamantanis/date-lib",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "The goal of this package is to handle date operations in a better and more intuitive way than the built in Date Object",
     "main": "src/index.js",
     "scripts": {
