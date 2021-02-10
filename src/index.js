@@ -119,17 +119,17 @@ class BetterDate {
         const diffSeconds = this.secs - now.secs + diffMinutes * 60
 
         if (diffMonth > 11) {
-            return `${ diffYear } year${ diffYear > 1 ? 's' : '' } from now`
+            return `${ Math.abs(diffYear) } year${ diffYear > 1 ? 's' : '' } from now`
         } else if (diffMonth < -11) {
             return `${ Math.abs(diffYear) } year${ diffYear < -1 ? 's' : '' } ago`
         } else if (diffMonth > 0) {
-            return `${ diffMonth } month${ diffMonth > 1 ? 's' : '' } from now`
+            return `${ Math.abs(diffMonth) } month${ diffMonth > 1 ? 's' : '' } from now`
         } else if (diffMonth < 0) {
             return `${ Math.abs(diffMonth)} month${ diffMonth < -1 ? 's' : '' } ago`
         } else if (diffHours > 23) {
-            return `${ diffDay } day${ diffDay > 1 ? 's' : '' } from now`
+            return `${ Math.abs(diffDay) } day${ diffDay > 1 ? 's' : '' } from now`
         } else if (diffHours < -23) {
-            return `${ diffDay } day${ diffDay < -1 ? 's' : '' } ago`
+            return `${ Math.abs(diffDay) } day${ diffDay < -1 ? 's' : '' } ago`
         } else if (diffMinutes > 59) {
             return `${ Math.abs(diffHours) } hour${ diffHours > 1 ? 's' : '' } from now`
         } else if (diffMinutes < -59) {
